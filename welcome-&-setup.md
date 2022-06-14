@@ -8,7 +8,7 @@ For those of you that indicated you did not have an account on the [Dartmouth Di
 
 We will be using a dataset downloaded from the [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra), a public repository of genomic data. This dataset comes from [this paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0099625), and was collected from human airway smooth muscle cells to test gene pathways effected by exposure to Glucocorticoid drugs, which have been historically used for their anti-inflammatory effects to treat asthma.
 
-All the teaching materials are located within the [GitHub repository](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2021). We suggest you bookmark this page so you can easily get back to this repository each day.
+All the teaching materials are located within the [GitHub repository](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2022). We suggest you bookmark this page so you can easily get back to this repository each day.
 
 Lessons are provided in Markdown format (files with extension  `(.md)`) and also contain *'code chunks'* that you will use to perform the analysis of this dataset. The majority of analysis will be performed using a terminal application or emulator, with an open `ssh` connection to the Discovery cluster. You may copy and paste the code chunks into your terminal window to perform analyses, or type them out by hand.  
 
