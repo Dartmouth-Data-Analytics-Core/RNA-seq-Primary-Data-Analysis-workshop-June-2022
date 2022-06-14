@@ -96,7 +96,7 @@ When you are ready activate the conda environment, use the following command:
 conda activate rnaseq1
 ```
 
-You will see that the activate command has worked when it reads `rnaseq_w` rather than `base` to the left of the prompt.
+You will see that the activate command has worked when it reads `rnaseq1` rather than `base` to the left of the prompt.
 
 When you are finished using a conda environment, it is good practice to deactivate your session with the following command.
 
