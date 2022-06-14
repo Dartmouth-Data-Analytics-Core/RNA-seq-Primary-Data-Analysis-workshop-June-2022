@@ -93,7 +93,7 @@ conda env create -f /dartfs-hpc/scratch/rnaseq1/environment.yml
 When you are ready activate the conda environment, use the following command:
 
 ```bash
-conda activate rnaseq_w
+conda activate rnaseq1
 ```
 
 You will see that the activate command has worked when it reads `rnaseq_w` rather than `base` to the left of the prompt.
