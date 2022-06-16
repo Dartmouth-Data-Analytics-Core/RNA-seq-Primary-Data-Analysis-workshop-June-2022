@@ -105,7 +105,7 @@ Additional exercise:
 
 ## Run htseq-count on the rest of our samples
 ```bash
-ls ../alignment/*.Aligned.sortedByCoord.out.chr20.bam | while read x; do
+ls ../alignment/*.Aligned.sortedByCoord.out.bam | while read x; do
 
   # save the file name
   sample=`echo "$x"`
@@ -120,7 +120,7 @@ ls ../alignment/*.Aligned.sortedByCoord.out.chr20.bam | while read x; do
     -s no \
     -r pos \
     --additional-attr "gene_name" \
-    ../alignment/${sample}.Aligned.sortedByCoord.out.chr20.bam \
+    ../alignment/${sample}.Aligned.sortedByCoord.out.bam \
     /dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.chr20.gtf > ${sample}.htseq-counts
 done
 ```
