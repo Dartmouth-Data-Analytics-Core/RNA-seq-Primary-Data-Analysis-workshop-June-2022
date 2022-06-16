@@ -211,7 +211,7 @@ head /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt
 cat /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt | wc -l
 
 # add it to our quant directory
-cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt all_counts_full.txt
+cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt all_counts_full.txt
 
 # also copy the below file as we will need it in the next lesson
 cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/gene-lengths-grch38.tsv gene-lengths-grch38.tsv
