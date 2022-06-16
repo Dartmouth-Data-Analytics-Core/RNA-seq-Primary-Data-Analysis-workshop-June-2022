@@ -138,15 +138,15 @@ myarray=()
 
 # loop over htseq.counts files and extract 2nd column (the raw read counts) using 'cut' command
 while read x;  do
-	# split up sample names to remove everything after "-"
-	sname=`echo "$x"`
-	sname=`echo "$sname" | cut -d"-" -f1`
-	# extract second column of file to get read counts only
-	echo counts for "$sname" being extracted
-	cut -f3 $x > "$sname".tmp.counts
-	# save shorthand sample names into an array  
-	sname2="$sname"
-	myarray+=($sname2)
+  # split up sample names to remove everything after "-"
+  sname=`echo "$x"`
+  sname=`echo "$sname" | cut -d"-" -f1`
+  # extract second column of file to get read counts only
+  echo counts for "$sname" being extracted
+  cut -f3 $x > "$sname".tmp.counts
+  # save shorthand sample names into an array  
+  sname2="$sname"
+  myarray+=($sname2)
 done < <(ls -1 *.htseq-counts | sort)
 ```
 
@@ -293,7 +293,7 @@ rsem-calculate-expression --paired-end \
                           --alignments \
                           --strandedness none \
                           -p 1 \
-                          ../alignments/SRR1039508.Aligned.toTranscriptome.out.bam \
+                          SRR1039508.Aligned.toTranscriptome.out.bam \
                           /dartfs-hpc/scratch/rnaseq1/refs/hg38_chr20_index_RSEM/ref \
                           SRR1039508
 ```
