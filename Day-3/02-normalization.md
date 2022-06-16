@@ -155,11 +155,11 @@ tpm <- function(counts, lengths) {
 }
 
 # apply function to the columns of raw counts data
-all_counts_tpm <- apply(all_counts[, 3:5], 2, tpm, gene_lengths$length)
+all_counts_tpm <- apply(all_counts[1:(nrow(all_counts)-5), 3:5], 2, tpm, gene_lengths$length)
 ## NOTE: we are calculating tpm for first 3 samples only to save time..
 
 # add gene info columns back in
-all_counts_tpm <- cbind(all_counts[, c(1,2)], all_counts_tpm)
+all_counts_tpm <- cbind(all_counts[1:(nrow(all_counts)-5), c(1,2)], all_counts_tpm)
 
 # write to file
 write.csv(all_counts_tpm, file="all_counts_TPM.csv")
@@ -226,11 +226,11 @@ fpkm <- function(counts, lengths) {
 }
 
 # apply function to the columns of raw counts data
-all_counts_fpkm <- apply(all_counts[, 3:5], 2, fpkm, gene_lengths$length)
+all_counts_fpkm <- apply(all_counts[1:(nrow(all_counts)-5), 3:5], 2, fpkm, gene_lengths$length)
 ## NOTE: we are calculating fpkm for first 3 samples only to save time..
 
 # add gene info columns back in
-all_counts_fpkm <- cbind(all_counts[, c(1,2)], all_counts_fpkm)
+all_counts_fpkm <- cbind(all_counts[1:(nrow(all_counts)-5), c(1,2)], all_counts_fpkm)
 
 # write to file
 write.csv(all_counts_fpkm, file="all_counts_FPKM.csv")
