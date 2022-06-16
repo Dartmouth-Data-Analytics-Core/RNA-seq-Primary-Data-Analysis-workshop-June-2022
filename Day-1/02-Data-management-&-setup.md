@@ -82,10 +82,10 @@ cd /dartfs-hpc/scratch/
 
 # go into it
 # remember to use your own initials - this is Owen's directory
-cd omw
+cd omw/rnaseq_workshp2
 
 # set an alias so we can get here quickly
-alias rnaw='cd /dartfs-hpc/scratch/omw/'
+alias rnaw='cd /dartfs-hpc/scratch/omw/rnaseq_workshp'
 ```
 
 We need to set up some sub-directories where we will conduct each step. The desired directory structure for the workshop looks like this:
