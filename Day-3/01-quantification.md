@@ -208,7 +208,7 @@ Have a quick look at it:
 head /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt
 
 # how many lines
-cat /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt | wc -l
+cat /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt | wc -l
 
 # add it to our quant directory
 cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt all_counts_full.txt
