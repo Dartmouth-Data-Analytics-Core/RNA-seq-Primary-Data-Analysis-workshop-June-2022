@@ -135,9 +135,6 @@ Since TPM normalizes for both gene length and sequencing depth, TPM values can b
 
 Calculate TPM from our raw read counts:
 ```r
-# read in raw counts matrix
-all_counts <- read.table("all_counts.txt", sep="\t", stringsAsFactors=FALSE, header=TRUE)
-
 # read in gene lengths matrix (pre made for you)
 gene_lengths <- read.table("gene-lengths-grch38.tsv", sep="\t", stringsAsFactors=FALSE, header=TRUE)
 
