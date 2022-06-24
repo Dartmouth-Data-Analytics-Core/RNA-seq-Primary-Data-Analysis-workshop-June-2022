@@ -10,7 +10,7 @@ Lets login to discovery7 and start and interactive session before we get started
 ssh d41294d@discovery7.dartmouth.edu
 
 # log onto the node we reserved
-srun -p rnaseq --account=rnaseq --cpus-per-task=1 --pty /bin/bash
+srun -p preempt1 --account=DAC --cpus-per-task=1 --pty /bin/bash
 ```
 
 ## Dataset for the workshop
