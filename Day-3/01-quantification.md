@@ -105,7 +105,7 @@ Additional exercise:
 
 ## Run htseq-count on the rest of our samples
 ```bash
-ls ../alignment/*.Aligned.sortedByCoord.out.chr20.bam | while read x; do
+ls ../alignment/*.Aligned.sortedByCoord.out.bam | while read x; do
 
   # save the file name
   sample=`echo "$x"`
@@ -120,7 +120,7 @@ ls ../alignment/*.Aligned.sortedByCoord.out.chr20.bam | while read x; do
     -s no \
     -r pos \
     --additional-attr "gene_name" \
-    ../alignment/${sample}.Aligned.sortedByCoord.out.chr20.bam \
+    ../alignment/${sample}.Aligned.sortedByCoord.out.bam \
     /dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.chr20.gtf > ${sample}.htseq-counts
 done
 ```
@@ -138,15 +138,15 @@ myarray=()
 
 # loop over htseq.counts files and extract 2nd column (the raw read counts) using 'cut' command
 while read x;  do
-	# split up sample names to remove everything after "-"
-	sname=`echo "$x"`
-	sname=`echo "$sname" | cut -d"-" -f1`
-	# extract second column of file to get read counts only
-	echo counts for "$sname" being extracted
-	cut -f3 $x > "$sname".tmp.counts
-	# save shorthand sample names into an array  
-	sname2="$sname"
-	myarray+=($sname2)
+  # split up sample names to remove everything after "-"
+  sname=`echo "$x"`
+  sname=`echo "$sname" | cut -d"-" -f1`
+  # extract second column of file to get read counts only
+  echo counts for "$sname" being extracted
+  cut -f3 $x > "$sname".tmp.counts
+  # save shorthand sample names into an array  
+  sname2="$sname"
+  myarray+=($sname2)
 done < <(ls -1 *.htseq-counts | sort)
 ```
 
@@ -208,10 +208,10 @@ Have a quick look at it:
 head /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt
 
 # how many lines
-cat /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt | wc -l
+cat /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt | wc -l
 
 # add it to our quant directory
-cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt all_counts_full.txt
+cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt all_counts_full.txt
 
 # also copy the below file as we will need it in the next lesson
 cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/gene-lengths-grch38.tsv gene-lengths-grch38.tsv
@@ -293,7 +293,7 @@ rsem-calculate-expression --paired-end \
                           --alignments \
                           --strandedness none \
                           -p 1 \
-                          ../alignments/SRR1039508.Aligned.toTranscriptome.out.bam \
+                          SRR1039508.Aligned.toTranscriptome.out.bam \
                           /dartfs-hpc/scratch/rnaseq1/refs/hg38_chr20_index_RSEM/ref \
                           SRR1039508
 ```

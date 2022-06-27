@@ -1,7 +1,7 @@
 
 # RNA-seq Primary Data Analysis Workshop - June 2022
 
-This workshop will be delivered on June 27th, 28th, and 30th 2021 by the Data Analytics Core (DAC) of the [Center for Quantitative Biology at Dartmouth](https://sites.dartmouth.edu/cqb/). 
+This workshop will be delivered on June 27th, 28th, and 30th 2022 by the Data Analytics Core (DAC) of the [Center for Quantitative Biology at Dartmouth](https://sites.dartmouth.edu/cqb/). 
 
 All the teaching materials required for the workshop can be downloaded from this repository. Datasets used in the workshop will be available through the [Dartmouth Discovery cluster](https://rc.dartmouth.edu/index.php/discovery-overview/), which we will use to perform analysis during the workshop. You must obtain a discovery account **before** the workshop to participate. 
 

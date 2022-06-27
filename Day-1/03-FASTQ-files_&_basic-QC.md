@@ -142,29 +142,29 @@ Loops allow us repeat operations over a defined variable or set of files. Essent
 Notice that the variable ***i*** set in the conditions for our loop is used to reference all the elements to be looped over in the operation using the term ***$i*** in this **for*** loop example:
 ```bash
 # loop over numbers 1:10, printing them as we go
-for i in {1..10}; do \
-   echo "$i"; \
+for i in {1..10}; do 
+   echo "$i"; 
 done
 ```
 
 
 Alternatively, if you do not know how many times you might need to run a loop, using a ***while*** loop may be useful, as it will continue the loop until the boolean (logical) specified in the first line evaluates to `false`. An example would be looping over all of the files in your directory to perform a specific task. e.g.
 ```bash
-ls *.fastq.gz | while read x; do \
-   # tell me what the shell is doing
-   echo $x is being processed...;
-   # provide an empty line for ease of viewing
-   echo ''  \
-   # unzip w/ zcat and print head of file
-   zcat $x | head -n 4;  \
-   # print 3 lines to for ease of viewing
-   echo ''  \
-done
+ls *.fastq.gz | while read x; do 
+ # tell me what the shell is doing
+ echo $x is being processed...
+ # provide an empty line for ease of viewing
+ echo ''  
+ # unzip w/ zcat and print head of file
+ zcat $x | head -n 4  
+ # print 3 lines to for ease of viewing
+ echo ''  
+ done
 ```
 
 Perhaps we wanted to check how many reads contain the start codon `ATG`. We can do this by searching for matches and counting how many times it was found, and repeating this process for each sample using a for loop.
 ```bash
-ls *.fastq.gz | while read x; do \
+ls *.fastq.gz | while read x; do 
    echo $x
    zcat $x | sed -n '2~4p' | head -4 | grep -o "ATG" | wc -l
 done
@@ -172,8 +172,8 @@ done
 
 We could use one of these loops to perform the nucleotide counting task that we performed on a single sample above.
 ```bash
-ls *.fastq.gz | while read x; do \
-   echo ''  \
+ls *.fastq.gz | while read x; do 
+   echo ''  
    echo processing sample $x
    zcat $x | sed -n '2~4p' | sed -n '1,10000p' | grep -o . | sort | grep 'C\|G' | uniq -c ;
 done
@@ -342,9 +342,14 @@ cutadapt -a 'A{76}' -o out.trimmed.fastq.gz input.fastq.gz > cutadapt.logout;
 
 Since the polyA and adapter sequence contamination is relatively low for this dataset, we won't trim any specific sequences, although we will perform basic quality and length processing of the raw reads. Lets make a new directory and do this for do this for one sample.
 ```bash
+# go to parent directory using alias (or absolute/relative path)
+rnaw
+
+# make directory for results and move into it 
 mkdir ../../results/trim
 cd ../../results/trim
 
+# run cutadapt 
 cutadapt \
    -o SRR1039508_1.trim.chr20.fastq.gz \
    -p SRR1039508_2.trim.chr20.fastq.gz \

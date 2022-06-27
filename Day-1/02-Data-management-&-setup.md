@@ -10,7 +10,7 @@ Lets login to discovery7 and start and interactive session before we get started
 ssh d41294d@discovery7.dartmouth.edu
 
 # log onto the node we reserved
-srun -p rnaseq --account=rnaseq --cpus-per-task=1 --pty /bin/bash
+srun -p preempt1 --account=DAC --cpus-per-task=1 --pty /bin/bash
 ```
 
 ## Dataset for the workshop
@@ -82,10 +82,10 @@ cd /dartfs-hpc/scratch/
 
 # go into it
 # remember to use your own initials - this is Owen's directory
-cd omw
+cd omw/rnaseq_workshp2
 
 # set an alias so we can get here quickly
-alias rnaw='cd /dartfs-hpc/scratch/omw/'
+alias rnaw='cd /dartfs-hpc/scratch/omw/rnaseq_workshp'
 ```
 
 We need to set up some sub-directories where we will conduct each step. The desired directory structure for the workshop looks like this:
@@ -131,9 +131,9 @@ You should have also created a `conda` environment called `rnaseq_w` by followin
 
 Activate the conda environment:
 ```bash
-conda activate rnaseq_w
+conda activate rnaseq1
 ```
-If you don't know what rnaseq_w is, please visit [here](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2021/blob/main/welcome-%26-setup.md).
+If you don't know what rnaseq1 is, please visit [here](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2022/blob/master/welcome-%26-setup.md).
 
 We are now ready to start working with the data and processing the raw FASTQ files.
 
@@ -143,5 +143,5 @@ We are now ready to start working with the data and processing the raw FASTQ fil
 Although not required since the workshop materials will remain available on the [GitHub repository](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2021), you may download the workshop materials to your local computer. In your terminal window, navigate to where you want to download the files on your local machine. Then execute the following command:
 
 ```bash
-git clone https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2021/
+git clone https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2022/
 ```

@@ -10,9 +10,9 @@ We have designed the schedule so that breaks are essentially built into the brea
 ---
 
 ## Day1
-- **12:00-12:30 - Welcome & introduction (Dr. Owen Wilkins)**
-- **12:30-1:30 - 01: The UNIX Shell**
-- **1:30-2:25 - Intro. to NGS (Lecture - Dr. Fred Kolling)**
+- **12:00-12:15 - Welcome & introduction (Dr. Owen Wilkins)**
+- **12:15-1:00 - 01: The UNIX Shell**
+- **1:00-2:25 - Intro. to NGS (Lecture - Dr. Fred Kolling)**
 - **2:30-3:30 - 02: Data management & setup**
 - **3:30-5:00 - 03: FASTQ files & basic QC**
 
