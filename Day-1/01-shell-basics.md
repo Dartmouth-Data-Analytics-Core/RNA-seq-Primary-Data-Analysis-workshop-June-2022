@@ -304,9 +304,9 @@ We will do this now by loading a new environment with the tool `conda`. We have 
 
 ```bash
 # Load conda environment
-conda activate rnaseq_w
+conda activate rnaseq1
 ```
-This should change the word at the beginning of your prompt from `(base)` to the name of the conda environment that you just loaded `(rnaseq_w)`.
+This should change the word at the beginning of your prompt from `(base)` to the name of the conda environment that you just loaded `(rnaseq1)`.
 
 > As we move through the subsequent lessons, we will introduce more complex bash commands in order to manipulate common bioinformatics file types. If you are ever confused about what a command does, remember you can always use `man` to check out the manual page (or google it). It you are confused about how commands are used in conjunction with each other, it can also be helpful to break them down and run parts individually, in order to understand what the constituent parts do.
 
