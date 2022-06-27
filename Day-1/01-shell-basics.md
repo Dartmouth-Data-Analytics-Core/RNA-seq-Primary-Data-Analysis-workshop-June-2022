@@ -20,7 +20,7 @@ Some bioinformatics software provides GUIs that enable users execute tasks with 
 
 ### The absolute basics
 
-There are different types of Unix shells, however the most popular is Bash (the *Bourne Again Shell*), which is also the most common on Linux sysetms. Since the majority of participants will be using the Bash shell, and this is the default shell used on Dartmouth's high performance computing system (which we will be using), this lesson will be introduce the Shell through using the Bash shell, however most, if not all, content should be transferable to other Unix shells.
+There are different types of Unix shells, however the most popular is Bash (the *Bourne Again Shell*), which is also the most common on Linux systems. Since the majority of participants will be using the Bash shell, and this is the default shell used on Dartmouth's high performance computing system (which we will be using), this lesson will be introduce the Shell through using the Bash shell, however most, if not all, content should be transferable to other Unix shells.
 
 > Use the Cheat Sheet in the GitHub repo to help you learn commands and available options.
 
@@ -158,7 +158,7 @@ cp /dartfs-hpc/scratch/rnaseq1/counts/all_counts.txt ./
 
 ### Viewing the contents of files
 
-The shell provides us with a number of commands to view the contents of files. The `cat` command  (standing for concatenate) will print the entire contents of a file to the terminal. This is useful for smaller files, but with larger files can be an impractical way to look at the contents of a file.
+The shell provides us with commands to view the contents of files in define ways. The `cat` command for example (which stands for for concatenate) will print the entire contents of a file to the terminal. This can be useful for smaller files, but as you will see with larger files can quickly fill the terminal with more lines of data than it can display.
 
 ```bash
 cat all_counts.txt
@@ -166,29 +166,31 @@ cat all_counts.txt
 
 When working with larger files, which we are usually doing in bioinformatics, you may not wish to print the whole file as it would overrun your terminal. Other commands exist that allow you to explore file contents with more control.
 - `more` shows you as much of the file as can be shown in the size of the terminal screen you have open, and you can continue to "scroll" through the rest of the file by using the space bar  
+- `less` is a similar command to `more`, and has advantages such as not persisting in the terminal, and being searchable
 - `head` will print the first 10 lines by default, but this number can be controlled with the `-n` option
-- `tail` will print the final lines of a file, and can also be controlled with the `-n` option
+- `tail` will print the final 10 lines of a file, and can also be controlled with the `-n` option
 
+We will use a large text file to show the utility of these commands, as well as other commands in the subsequent parts of this lesson.
 ```bash
-# Show the first 20 lines of the all_counts.txt file
-head -n 20 all_counts.txt
+# Show the first 10 lines of the all_counts.txt file
+head -n 10 all_counts.txt
 
-# Show the last 50 lines of the all_counts.txt file
-tail -n 50 all_counts.txt
+# Show the last 20 lines of the all_counts.txt file
+tail -n 20 all_counts.txt
 
-# use word count (wc) command with the lines option (-l) to show how many lines (rows) are in the dataset
+# Use the word count (wc) command with the lines option (-l) to show how many lines (rows) are in the dataset
 wc -l all_counts.txt
 ```
 
 ### Renaming and removing files
 
-Sometimes you will need to reorganize your directories or rename a file, which can be achieved with the `mv` command. Let's start by copying the all_counts.txt file from the `rnaseq_workshp` directory to your home directory.
+Sometimes you will need to reorganize your directories or rename a file, which can be achieved with the `mv` command. Let's start by copying the all_counts.txt file from the rnaseq_workshp directory to your home directory.
 
 ```bash
 # Copy the all_counts.txt file to your home directory
 cp all_counts.txt ~/all_counts.txt
 ```
-Now let's rename the copy of the `all_counts.txt` file that we just created.
+Now let's rename the copy of the all_counts.txt file that we just created.
 ```bash
 # Rename the copied all_counts.txt file
 mv ~/all_counts.txt ~/all_counts.copy.txt
@@ -205,30 +207,32 @@ mv ~/all_counts.copy.txt ./
 ls
 ```
 
-Copying the `all_counts.copy.txt` file was just an exercise to show you how the tools works, in practice you will want to keep your directories as neat as possible as you accumulate a lot of files. Let's remove the `all_counts.copy.txt` file with the `rm` command.
+Copying the all_counts.copy.txt file was just an exercise to show you how the tools work, in practice you will want to keep your directories as neat as possible as you accumulate a lot of files. Let's remove the all_counts.copy.txt file with the `rm` command.
 
 ```bash
+# For the sake of being careful, let's first list the details file to be removed
+ls -l all_counts.copy.txt
 # Remove the all_counts.copy.txt file
 rm all_counts.copy.txt
 ```
 
-You will notice that before the file was deleted you were asked if you were sure you wanted this file deleted. You want to be careful not to remove files that you did not create if you are working in shared directories. If you want to bypass this checkpoint, you can use the `-f` flag with `rm -f` to force the removal of a file, but be careful with this, as **there is no 'Trash' equivalent in the shell.**
+You will notice that before the file was deleted you were asked if you were sure you wanted this file deleted. You want to be careful not to remove files that you did not create if you are working in shared directories. If you want to bypass this checkpoint, you can use the `-f` flag with `rm -f` to force the removal of a file, but be careful with this, as there is no *Trash* equivalent in the shell.
 
 ### Manipulating file contents
 
 Some commands enable you to manipulate and subset files based on specific parameters. One useful example is the `cut` command, which allows you to 'cut' a file based on the options you select, such as the `-f` option, which corresponds to fields (columns). We could use `cut` to obtain read counts for only the first 5 samples in `all_counts.txt`.
 ```bash
-# Look at only the counts from the first four samples
+# Look at only the counts from the first five columns
 cut -f 1,2,3,4,5 all_counts.txt
 ```
 
-To prevent all rows being printed, we could combine the `cut` command with the `head` command using a *'pipe'*, specified by a '|'. Pipes send the output from one command to a subsequent command, all in the same line, such that you do not need to include the first argument for the last command.
+To prevent all rows being printed to our console, we could combine the `cut` command with the `head` command using a *'pipe'*, specified by a '|'. Pipes send the output an initial command to a subsequent command, all in the same line, to allow the output of the first command to be used as the input to the second.
 ```bash
-# List only the first 100 lines of only samples SRR1039508 (col 2) and SRR1039523 (col 17)
-cut -f 1,2,17 all_counts.txt | head -n 100
+# List only the first 20 lines of only samples SRR1039508 (col 2) and SRR1039523 (col 17)
+cut -f 1,2,17 all_counts.txt | head -n 20
 ```
 
-Similarly to how we used the redirect command `>` above, we could redirect the output of the cut command to create a new counts file, that only contains the columns 1 (gene IDs), and samples in columns 2 and 17.
+Similarly to how we used the pipe operator (|) above, we could use the redirect operator(>) to send the output of the cut command to create a new counts file, that only contains the columns 1 (gene IDs), and samples in columns 2 and 17.
 ```bash
 # Print the counts from SRR1039508 and SRR1039523 to a new file
 cut -f 1,2,17 all_counts.txt > all_counts_sub.txt
@@ -237,16 +241,15 @@ cut -f 1,2,17 all_counts.txt > all_counts_sub.txt
 head all_counts_sub.txt
 ```
 
-### Pattern matching with *Grep*
+### Pattern matching with *grep*
 
-Often we want to extract a specific piece of information from a large file. Say we are interested in the read counts for a specific gene, `ALDH3B1` (Ensembl ID: `ENSG00000006534`). We can use the `grep` command to search for this ID, or any other character string we are interested in.
-
+Often we will want to pull a specific piece of information from a large file, let's say that we were interested in the read counts for a specific gene, ALDH3B1 (Ensembl ID: ENSG00000006534). We can use the `grep` command to search for this ID, or any other character string we are interested in, in our counts matrix.
 ```bash
 # Get the count data for ENSG00000006534 (ALDH3B1) from all_counts.txt
 grep "ENSG00000006534" all_counts.txt
 ```
 
-`grep` is a pattern recognition tool that searches in files for a character string we can define. We can define the entire character string, as we did above, or combine regular characters with special characters (or 'wildcards') to search for specific types of matches. the most commonly used special characters are included in the table below.
+`grep` is a pattern recognition tool that searches in files for a character string we can define. We can define the entire character string, as we did above, or combine regular characters with special characters (or 'wildcards') to search for specific types of matches. Some commonly used special characters are included in the table below.
 
 Operator | Effect
 ---|---
@@ -257,11 +260,9 @@ $ | end of the line
 [a-z]| any lowercase letter
 [A-Z]| any uppercase letter
 \t | a tab
-\n | a newline
-\s | any white space (tab, newline, space)
-\S | non-white space (the opposite of \s)
 
-These *regular expressions* can be used with any of the tools that you have learned thus far, so if we wanted to list all of the files in our directory that end in .txt we could use the following command.
+
+These regular expressions can be used with any of the tools that you have learned thus far, so if we wanted to list all of the files in our directory that end in .txt we could use the following command.
 
 ```bash
 # List all files that end in .txt
@@ -275,14 +276,10 @@ Quantifier| Operation
 X* | 0 or more repetitions of X
 X+ | 1 or more repetitions of X
 X? | 0 or 1 instances of X
-X{*m*} | exactly *m* instances of X
-X{*m*,} | at least *m* instances of X
-X{*m*,*n*} | between *m* and *n* instances of X
 
-Now lets use some of these regular expressions in a `grep` command  to see their utility. Let's use regular expressions to see how many genes have no reads expressed for the first four samples.  
+Now let's use some of these regular expressions in a `grep` command  to see their utility. Let's use regular expressions to see how many genes have zero reads counted for the first four samples. The flag `-P` indicates that we will be using perl-style regular expressions in the pattern we are searching for, you can use `grep --h` to learn more about available flags for the `grep` command. 
 
 ```bash
-# *Some grep versions require grep -P to match tab characters
 # Count the number of genes with no reads in the first four samples
 grep -P "^ENSG[0-9]*\t0\t0\t0\t0\t" all_counts.txt| wc -l
 
@@ -294,15 +291,17 @@ grep -P "^ENSG[0-9]*\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0$" all_count
 
 You will notice the prompt in your terminal when you are logged onto discovery starts with the term `(base)` what this is indicating is that the environments loaded in your .bash_profile are the tools that are available for you to use. For this workshop (and for most NGS data processing) you will need to extend the software packages that are available to you.
 
-We will do this now by loading a new environment with the tool `conda`. We have pre-built this `conda` environment for you such that all of the tools you will need have been loaded into this environment, you should have created this environment with the commands included in the welcome and setup email.
+We will do this now by loading a new environment with the tool `conda`. We have pre-built this `conda` environment for you such that all of the tools you will need have been loaded into this environment, you should have created this environment with the commands included in the welcome and setup email. Tomorrow we will talk more about how to create your own custom `conda` environment.
 
 ```bash
 # Load conda environment
 conda activate rnaseq1
+# Check your PATH compared to before activating, note the additional binaries folder
+echo $PATH| tr ":" "\n"
 ```
 This should change the word at the beginning of your prompt from `(base)` to the name of the conda environment that you just loaded `(rnaseq1)`.
 
-> As we move through the subsequent lessons, we will introduce more complex bash commands in order to manipulate common bioinformatics file types. If you are ever confused about what a command does, remember you can always use `man` to check out the manual page (or google it). It you are confused about how commands are used in conjunction with each other, it can also be helpful to break them down and run parts individually, in order to understand what the constituent parts do.
+> As we move through the subsequent lessons, we will introduce more complex bash commands in order to manipulate common bioinformatics file types. If you are ever confused about what a command does, remember you can always use `man` to check out the manual page (or Google it). It you are confused about how commands are used in conjunction with each other, it can also be helpful to break them down and run parts individually, in order to understand what the constituent parts do.
 
 ### Breakout room activities
 
