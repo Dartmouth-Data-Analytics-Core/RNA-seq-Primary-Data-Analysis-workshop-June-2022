@@ -131,9 +131,9 @@ You should have also created a `conda` environment called `rnaseq_w` by followin
 
 Activate the conda environment:
 ```bash
-conda activate rnaseq_w
+conda activate rnaseq1
 ```
-If you don't know what rnaseq_w is, please visit [here](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2021/blob/main/welcome-%26-setup.md).
+If you don't know what rnaseq1 is, please visit [here](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2022/blob/master/welcome-%26-setup.md).
 
 We are now ready to start working with the data and processing the raw FASTQ files.
 
