@@ -386,8 +386,8 @@ chmod a+rwx *.bam*
 
 If you were not able to generate the above files, you can download a public versions below: 
 ```bash
-scp d41294d@discovery7.dartmouth.edu:/dartfs-hpc/scratch/rnaseq1/data/bam/SRR1039508.Aligned.out.sorted.bam ..
-scp d41294d@discovery7.dartmouth.edu:/dartfs-hpc/scratch/rnaseq1/data/bam/SRR1039508.Aligned.out.sorted.bam.bai ..
+scp d41294d@discovery7.dartmouth.edu:/dartfs-hpc/scratch/rnaseq1/data/bam/SRR1039508_1.Aligned.sortedByCoord.out.chr20.bam ..
+scp d41294d@discovery7.dartmouth.edu:/dartfs-hpc/scratch/rnaseq1/data/bam/SRR1039508_1.Aligned.sortedByCoord.out.chr20.bam.bai ..
 ```
 
 Open IGV, and follow the below steps:  
