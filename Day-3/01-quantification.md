@@ -76,11 +76,11 @@ htseq-count \
 	-r pos \
 	--additional-attr "gene_name" \
 	../alignment/SRR1039508.Aligned.sortedByCoord.out.chr20.bam \
-	/dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.chr20.gtf > SRR1039508.htseq-counts
+	/dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.gtf > SRR1039508.htseq-counts
 	
 	
 # same command as above but without the newlines to separate the flags - only run one of these	
-htseq-count -f bam -s no -r pos --additional-attr "gene_name" ../alignment/SRR1039508.Aligned.sortedByCoord.out.chr20.bam /dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.chr20.gtf > SRR1039508.htseq-counts
+htseq-count -f bam -s no -r pos --additional-attr "gene_name" ../alignment/SRR1039508.Aligned.sortedByCoord.out.chr20.bam /dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.gtf > SRR1039508.htseq-counts
 
 ```
 
