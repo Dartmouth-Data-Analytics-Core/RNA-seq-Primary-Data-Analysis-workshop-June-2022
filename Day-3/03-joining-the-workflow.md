@@ -50,7 +50,7 @@ Then we will use the array to write several for loops that iterate over the elem
 echo -n "RNA-Seq Pipeline beginning at: "; date
 
 ###################################
-### Data Gathering ###
+### Input Data Gathering ###
 
 echo "Symlinking Raw Data"
 mkdir data
@@ -62,6 +62,9 @@ cd ..
 sample_list="SRR1039508 SRR1039509 SRR1039512 SRR1039513"
 echo "The pipeline will be run for the following samples:"
 for i in $sample_list; do echo $i; done
+
+###################################
+### Input Data Checking ###
 
 echo "Checking file existence..."
 for i in $sample_list
@@ -75,8 +78,21 @@ do
         exit
     fi
 done
-echo "File checking complete."
+echo "Input file checking complete."
 
+###################################
+### Reference Data Checking ###
+
+STAR_INDEX=/dartfs-hpc/scratch/rnaseq1/refs/hg38_chr20_index
+
+if [ -d $STAR_INDEX ]
+then
+    echo $STAR_INDEX " index exists"
+else
+    echo $STAR_INDEX " does not exist"
+    echo "exiting pipeline..."
+fi
+echo "Reference file checking complete."
 
 
 ###################################
@@ -110,7 +126,7 @@ mkdir alignment
 cd alignment
 
 echo "Running STAR alignment..."
-for i in $sample_list; do STAR --genomeDir /dartfs-hpc/scratch/rnaseq1/refs/hg38_chr20_index --readFilesIn ../trim/${i}_1.trim.chr20.fastq.gz ../trim/${i}_2.trim.chr20.fastq.gz --readFilesCommand zcat --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outFilterType BySJout --outFileNamePrefix ${i}_; done
+for i in $sample_list; do STAR --genomeDir $STAR_INDEX --readFilesIn ../trim/${i}_1.trim.chr20.fastq.gz ../trim/${i}_2.trim.chr20.fastq.gz --readFilesCommand zcat --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outFilterType BySJout --outFileNamePrefix ${i}_; done
 echo "STAR complete."
 cd ..
 
