@@ -56,7 +56,7 @@ While multiple downstream applications of RNA-seq exist, differential expression
 
 If you are interested in learning how to perform a DE analysis, sign up for Part 2 in our series of RNA-seq data analysis workshops. You should all have received an email containing the [sign up link](https://sites.dartmouth.edu/cqb/workshops/rnaseq-differential-gene-expression-analysis-workshop/).
 
-#### Differential expression analysis  workshop - July 2020
+#### Differential expression analysis  workshop - July 2022
 ##### Workshop goals:
 
 - Develop a working understanding of fundamental bioinformatics and statistical concepts for a typical bulk RNA-seq DE analysis
@@ -64,11 +64,6 @@ If you are interested in learning how to perform a DE analysis, sign up for Part
 - Learn how to use unsupervised data analysis methods (e.g. principal components analysis) to explore RNA-seq datasets  
 - Perform a complete DE analysis on a real RNA-seq dataset  
 
-Monday, July 12, 2021
-Wednesday, July 14, 2021
-Friday, July 16, 2021
-
-Registration Close Date: July 5, 2021
 Registration Limit: 40
 
 #### High performance computing (HPC)
