@@ -4,6 +4,9 @@ Before you attend the workshop there are a couple of things we would like you to
 
 For those of you that indicated you did not have an account on the [Dartmouth Discovery cluster](https://rc.dartmouth.edu/index.php/discovery-overview/) you should have received an email explaining how to set that up, please make sure this is done and you are able to log into your account **BEFORE** the workshop begins. **YOU WILL NEED A DISCOVERY ACCOUNT!**
 
+**Install VPN Client**
+You will also need to install Dartmouth College's VPN client to access Dartmouth compute resources. Once you have your netID you can navigate [here](https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceDet?ID=30995) and use the green button on the left to install the VPN client.  
+
 ## How to do this workshop ##
 
 We will be using a dataset downloaded from the [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra), a public repository of genomic data. This dataset comes from [this paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0099625), and was collected from human airway smooth muscle cells to test gene pathways effected by exposure to Glucocorticoid drugs, which have been historically used for their anti-inflammatory effects to treat asthma.
