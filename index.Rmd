@@ -1,0 +1,7 @@
+---
+title: "RNA-seq-Primary-Data-Analysis-new"
+author: "Dartmouth Genomic Data Science Core"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+---
+
