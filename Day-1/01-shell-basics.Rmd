@@ -1,6 +1,0 @@
----
-title: "01-shell-basics"
-output: html_document
----
-
-```{r child="Day-1/01-shell-basics.md"}

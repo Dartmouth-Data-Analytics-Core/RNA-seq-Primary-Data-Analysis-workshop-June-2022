@@ -1,3 +1,7 @@
+---
+title: "Data Management and Setup"
+---
+
 # Part 02 - Data management & setup
 
 ### Learning objectives:

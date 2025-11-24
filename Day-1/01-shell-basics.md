@@ -1,3 +1,7 @@
+---
+title: "Unix and Shell Basics"
+---
+
 # Unix/Linux Shell basics
 
 The Unix/Linux *'Shell'* describes a program that takes commands from an input (eg. your keyboard) and passes them to an operating system that will execute them. In contrast to a *Graphical User Interface (GUI)* the Shell is simultaneously a *command line interface (CLI)* and a programming language that allows you to perform tasks on your system.

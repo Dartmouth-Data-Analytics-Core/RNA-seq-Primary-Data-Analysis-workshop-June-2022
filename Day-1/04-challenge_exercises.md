@@ -1,3 +1,7 @@
+---
+title: "Challenge Exercise"
+---
+
 ## Challenge exercise: Read trimming
 
 We told you in the previous lesson that little adapter sequence contamination exists in this dataset. Use the skills you learn't in the last lesson to confirm this using `cutadapt`.

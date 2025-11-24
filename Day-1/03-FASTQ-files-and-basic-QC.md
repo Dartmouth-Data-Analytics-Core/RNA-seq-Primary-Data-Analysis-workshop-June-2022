@@ -1,3 +1,7 @@
+---
+title: "FASTQ Files and Basic QC"
+---
+
 # Working with FASTQ files & basic quality control
 
 ### Learning objectives:
