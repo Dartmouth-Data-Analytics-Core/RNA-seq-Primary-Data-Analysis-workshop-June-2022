@@ -1,4 +1,8 @@
-# Read mapping & alignments  
+---
+title: "Read Mapping and Alignment"
+---
+
+# Read mapping And alignments  
 
 ### Learning objectives:
 - Understand the major principles behind read mapping for RNA-seq data

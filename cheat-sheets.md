@@ -1,3 +1,7 @@
+---
+title: "Cheat Sheets"
+---
+
 # Cheat Sheets
 
 This page provides links to handy cheat sheets for the tools we will be using throughout the workshop. We recommend having these open while you work if you are new to programming with any of these tools.

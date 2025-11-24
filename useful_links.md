@@ -1,3 +1,7 @@
+---
+title: "Useful Links"
+---
+
 # Useful links
 
 This page provides links to useful tools for RNA_seq analysis. The cheat sheets directory in this repository also provides many useful links for more basic bioinformatics & programming skills.

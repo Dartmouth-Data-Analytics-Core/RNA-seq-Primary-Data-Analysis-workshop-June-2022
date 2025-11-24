@@ -1,3 +1,7 @@
+---
+title: "Alignment QC"
+---
+
 # Part 3 - Post-alignment QC
 
 ### Learning objectives:

@@ -1,3 +1,6 @@
+---
+title: "Normalization"
+---
 
 # Part 4 - Data normalization in RNA-seq
 

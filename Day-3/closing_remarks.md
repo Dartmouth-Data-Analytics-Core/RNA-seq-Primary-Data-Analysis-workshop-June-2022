@@ -1,3 +1,7 @@
+---
+title: "Closing Remarks"
+---
+
 # Closing remarks
 
 ### Workshop goals:

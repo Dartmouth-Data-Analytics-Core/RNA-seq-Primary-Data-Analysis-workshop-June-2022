@@ -1,3 +1,7 @@
+---
+title: "Joining the Workflow"
+---
+
 # Joining the workflow together  #
 Just like experiments in the lab, it is important that you keep careful track of how your work was performed. To do this for computational analysis, we need to keep track of the commands used to perform an analysis.
 

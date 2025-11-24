@@ -1,0 +1,34 @@
+project:
+  type: book
+
+book:
+  title: "RNA-seq Primary Data Analysis Workshop"
+  author: "Dartmouth Genomic Data Science Core"
+  chapters:
+    - index.md
+    - welcome-setup.md
+    - cheat-sheets.md
+    - useful_links.md
+    - part: "Day 1"
+      chapters:
+        - Day-1/01-shell-basics.md
+        - Day-1/02-Data-management-and-setup.md
+        - Day-1/03-FASTQ-files-and-basic-QC.md
+        - Day-1/04-challenge_exercises.md
+    - part: "Day 2"
+      chapters:
+        - Day-2/01-read-mapping.md
+        - Day-2/02-alignment-QC.md
+        - Day-2/03-challenge_exercise.md
+    - part: "Day 3"
+      chapters:
+        - Day-3/01-quantification.md
+        - Day-3/02-normalization.md
+        - Day-3/03-joining-the-workflow.md
+        - Day-3/closing_remarks.md
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    css: styles.css

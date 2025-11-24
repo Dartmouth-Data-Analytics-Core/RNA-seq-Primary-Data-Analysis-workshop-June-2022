@@ -1,3 +1,7 @@
+---
+title: "Welcome and Setup"
+---
+
 # Welcome to the RNA-seq Primary Data Analysis workshop #
 
 Before you attend the workshop there are a couple of things we would like you to do to get setup so you are able to participate in all sections of the workshop.  

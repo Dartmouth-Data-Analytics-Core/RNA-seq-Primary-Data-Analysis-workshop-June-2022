@@ -1,3 +1,7 @@
+---
+title: "Challenge Exercise"
+---
+
 # Prokaryotic Alignment
 
 Earlier today we used STAR to align human genomes to the hg38 reference genome using a splice aware aligner. In some cases a splice aware aligner is not appropriate for the dataset. One example of this are prokaryotic datasets. In these cases you will want to use an aligner like *Bowtie* or *BWA*. *Bowtie* is a gapped aligner so reads will map across small gaps that represent indels. *Bowtie* alone cannot map across larger gaps from introns but in combination with *Tophat* can be used to map to references that have introns. 
