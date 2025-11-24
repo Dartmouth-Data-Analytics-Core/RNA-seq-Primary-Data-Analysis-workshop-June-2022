@@ -1,11 +1,10 @@
-book_filename: "RNA-seq Primary Data Analysis"
+book_filename: "RNA-seq-Primary-Data-Analysis"
 rmd_files: 
   - index.Rmd
-  - RNA-seq Primary Data Analysis.Rmd
   - welcome-setup.md
   - cheat-sheets.md
   - useful_links.md
-  - Day-1/01-shell-basics.md
+  - Day-1/01-shell-basics.Rmd
   - Day-1/02-Data-management-and-setup.md
   - Day-1/03-FASTQ-files-and-basic-QC.md
   - Day-1/04-challenge_exercises.md
