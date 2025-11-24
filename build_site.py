@@ -18,7 +18,6 @@ CONTENT_DIR = "."
 BOOK_STRUCTURE = [
     ("index.md", "Introduction"),
     ("welcome-setup.md", "Welcome and Setup"),
-    ("cheat-sheets.md", "Cheat Sheets"),
     ("useful_links.md", "Useful Links"),
     ("Day 1", [
         ("Day-1/01-shell-basics.md", "Shell Basics"),
